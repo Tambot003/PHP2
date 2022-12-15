@@ -1,4 +1,8 @@
-
+<h1 style="color: #00FF00;  ">
+    Exercice 6
+</h1>
+<h3 style="color: #229954; ">Créer une fonction personnalisée permettant de remplir une liste déroulante à partir d'un tableau de valeurs.</h3>
+<hr>
     
     
     
