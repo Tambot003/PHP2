@@ -79,3 +79,5 @@ $car = new Voiture("pegeot", 408 , 5 , 50 , "démarr");
     echo "Marque: $this->marque\n";
     echo "Modèle: $this->modele\n";
     echo "Nombre de portes: $this;
+    
+    //Panneau de configuration\Comptes d’utilisateurs\Gestionnaire d'identification
