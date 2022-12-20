@@ -275,28 +275,28 @@ class Voiture
     echo "Vitesse actuelle : ".$this->vitesseActuelle." km/h  <br>";
   }
 }
-// Pour tester cette classe, on peut utiliser les instructions suivantes :
+    // Pour tester cette classe, on peut utiliser les instructions suivantes :
 
 
-// Création d'une voiture de marque Peugeot, modèle 408 et 5 portes
-$v1 = new Voiture("Peugeot", "408", 5,0);
-// Affiche les informations de la voiture
-$v1->afficherInfos();
-// Démarre la voiture
-$v1->demarrer();
+    // Création d'une voiture de marque Peugeot, modèle 408 et 5 portes
+   $v1 = new Voiture("Peugeot", "408", 5,0);
+   // Affiche les informations de la voiture
+   $v1->afficherInfos();
+   // Démarre la voiture
+   $v1->demarrer();
 
 
-$v1->accelerer(25); 
-$v1->accelerer(15);
+   $v1->accelerer(25); 
+   $v1->accelerer(15);
 
     echo "<br>";
-// Accélère la voiture de 50 km
+    // Accélère la voiture de 50 km
 
-  // Création d'une voiture de marque citroein, modèle C4 et 3 portes
+   // Création d'une voiture de marque citroein, modèle C4 et 3 portes
     $v2 = new Voiture("Citroien", "C4", 3,0);
     // Affiche les informations de la voiture
     $v2->afficherInfos();
     // Démarre la voiture
-$v2->demarrer();
+   $v2->demarrer();
     // Accélère la voiture de 50 km
-$v2->accelerer(0.2);
+   $v2->accelerer(0.2);
