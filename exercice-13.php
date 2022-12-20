@@ -1,7 +1,7 @@
 <h1 style="color: #00FF00;  ">
     Exercice 13
 </h1>
-<h4 ; ">Créer une classe Voiture possédant les propriétés suivantes : marque, modèle, nbPortes et
+<h4 ; >Créer une classe Voiture possédant les propriétés suivantes : marque, modèle, nbPortes et
 vitesseActuelle ainsi que les méthodes demarrer( ), accelerer( ) et stopper( ) en plus
 des accesseurs (get) et mutateurs (set) traditionnels. La vitesse initiale de chaque véhicule
 instancié est de 0. Une méthode personnalisée pourra afficher toutes les informations d’un
@@ -15,6 +15,7 @@ tests pour vérifier la cohérence de la classe Voiture. Vous devez afficher les
 suivants :</h4>
 <hr>
  <?php 
+ //___________________________________________________________
 //     Class voiture{
 //     private $_marque;
 //     private $_model;
@@ -36,8 +37,7 @@ suivants :</h4>
 //____________________________________________________________
 
 
-
-
+//____________________________________________________________
 // class Voiture {
 //     private $_brandname;
 //     private $_model;
@@ -88,7 +88,7 @@ suivants :</h4>
 
 
 
-
+//____________________________________________________________
 // class Voiture {
 //   private $_brandname;
 //   private $_model;
