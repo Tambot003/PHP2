@@ -1,7 +1,7 @@
 <h1 style="color: #00FF00;  ">
     Exercice 13
 </h1>
-<h3 style="color: #00FF0; ">Créer une classe Voiture possédant les propriétés suivantes : marque, modèle, nbPortes et
+<h4 ; ">Créer une classe Voiture possédant les propriétés suivantes : marque, modèle, nbPortes et
 vitesseActuelle ainsi que les méthodes demarrer( ), accelerer( ) et stopper( ) en plus
 des accesseurs (get) et mutateurs (set) traditionnels. La vitesse initiale de chaque véhicule
 instancié est de 0. Une méthode personnalisée pourra afficher toutes les informations d’un
@@ -12,12 +12,9 @@ v2 ➔ "Citroën","C4",3
 
 Coder l’ensemble des méthodes, accesseurs et mutateurs de la classe tout en réalisant des jeux de
 tests pour vérifier la cohérence de la classe Voiture. Vous devez afficher les tests et les éléments
-suivants :</h3>
+suivants :</h4>
 <hr>
-
-
-
-    <?php 
+ <?php 
 //     Class voiture{
 //     private $_marque;
 //     private $_model;
@@ -174,14 +171,14 @@ class Voiture
         
     }
 
-    // Méthode demarrer()
+    // passse le status a 1 s'il était à 0, sinon indique que le voiture est déjà démarée (status déjà à 1)
     public function demarrer()
     {
      if ($this->statut == false){
       $this->statut = true;
       echo "La voiture démarre.<br>";
       } else {
-        echo "la voituer ne peux pas démarre.<br>";
+        echo "la voiture est déjà démarrée.<br>";
       }
     }
 
@@ -194,15 +191,29 @@ class Voiture
         $this->vitesseActuelle += $vitesse;
         echo "La voiture accélère de " . $vitesse . " km/h.<br>La vitesse actuelle est de ".$this->vitesseActuelle. " km/h<br>";
       }
+      else{
+                echo "la voiture doit être démarrée pour pouvoir accélèrer !";
+      }
     }
 
 
     // Méthode stopper()
     public function stopper()
-    {
-        $this->vitesseActuelle = 0;
-        echo "La voiture s'arrête.<br>";
-    }
+     {
+    if ($this->statut == false){
+        $this->statut = true;
+        echo "La voiture démarre.<br>";
+        } else {
+          echo "la voiture est déjà démarrée.<br>";
+        }
+      }
+    
+    
+    // public function stopper()
+    // {
+    //     $this->vitesseActuelle = 0;
+    //     echo "La voiture s'arrête.<br>";
+    // }
 
 
     // Accesseur (get) pour la propriété marque
@@ -262,11 +273,6 @@ class Voiture
 
 
     // Méthode personnalisée pour afficher toutes les informations d'une voiture
-    // public function afficherInformations()
-    // {
-    //     echo "Marque : " . $this->marque . "<br>";
-    //     echo "Modèle";
-    // }
     public function afficherInfos()
   {
     echo "Marque : ".$this->marque."<br>";
@@ -275,9 +281,7 @@ class Voiture
     echo "Vitesse actuelle : ".$this->vitesseActuelle." km/h  <br>";
   }
 }
-    // Pour tester cette classe, on peut utiliser les instructions suivantes :
-
-
+    
     // Création d'une voiture de marque Peugeot, modèle 408 et 5 portes
    $v1 = new Voiture("Peugeot", "408", 5,0);
    // Affiche les informations de la voiture
@@ -290,13 +294,15 @@ class Voiture
    $v1->accelerer(15);
 
     echo "<br>";
-    // Accélère la voiture de 50 km
 
-   // Création d'une voiture de marque citroein, modèle C4 et 3 portes
+    // Création d'une voiture de marque citroein, modèle C4 et 3 portes
     $v2 = new Voiture("Citroien", "C4", 3,0);
+   
     // Affiche les informations de la voiture
     $v2->afficherInfos();
+   
     // Démarre la voiture
-   $v2->demarrer();
+    $v2->demarrer();
+   
     // Accélère la voiture de 50 km
-   $v2->accelerer(0.2);
+    $v2->accelerer(0);

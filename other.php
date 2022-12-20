@@ -1,126 +1,67 @@
+
 <?php
 
-class Voiture
+class Personne
 {
-    // Propriétés de la classe Voiture
-    private $marque;
-    private $modele;
-    private $nbPortes;
-    private $vitesseActuelle;
+    private string $_nom;
+    private string $_prenom;
+    private DateTime $_dtNaissance;
 
-    // Constructeur de la classe Voiture
-    public function __construct($marque, $modele, $nbPortes)
+    public function __construct(string $nom, string $prenom, string $dtNaissance)
     {
-        $this->marque = $marque;
-        $this->modele = $modele;
-        $this->nbPortes = $nbPortes;
-        $this->vitesseActuelle = 0;
+        $this->_nom = $nom;
+        $this->_prenom = $prenom;
+        $this->_dtNaissance = new DateTime($dtNaissance);
     }
 
-    // Méthode demarrer()
-    public function demarrer()
+    public function calcAge()
     {
-        echo "La voiture démarre.<br>";
+        $dtAujourdhui = date("Y-m-d");
+        $diff = date_diff($this->_dtNaissance, date_create($dtAujourdhui));
+        return $diff->format('%y ans   '). "<br>"; 
     }
 
-    // Méthode accelerer()
-    public function accelerer($vitesse)
-    {
-        $this->vitesseActuelle += $vitesse;
-        echo "La voiture accélère de " . $vitesse . " km/h.<br>";
+    public function __toString() {
+        return $this->_prenom." ".$this->_nom." ".$this->calcAge();
     }
 
-    // Méthode stopper()
-    public function stopper()
+    public function get_nom()
     {
-        $this->vitesseActuelle = 0;
-        echo "La voiture s'arrête.<br>";
+        return $this->_nom;
     }
 
-    // Accesseur (get) pour la propriété marque
-    public function getMarque()
+    public function set_nom($_nom)
     {
-        return $this->marque;
+        $this->_nom = $_nom;
+        return $this;
     }
 
-    // Mutateur (set) pour la propriété marque
-    public function setMarque($marque)
+    public function get_prenom()
     {
-        $this->marque = $marque;
+        return $this->_prenom;
     }
 
-    // Accesseur (get) pour la propriété modèle
-    public function getModele()
+    public function set_prenom($_prenom)
     {
-        return $this->modele;
+        $this->_nom = $_prenom;
+        return $this;
     }
 
-    // Mutateur (set) pour la propriété modèle
-    public function setModele($modele)
+    public function get_dtNaissance()
     {
-        $this->modele = $modele;
+        return $this->_dtNaissance;
     }
 
-    // Accesseur (get) pour la propriété nbPortes
-    public function getNbPortes()
+    public function set_dtNaissance($_dtNaissance)
     {
-        return $this->nbPortes;
+        $this->_dtNaissance = $_dtNaissance;
+        return $this;
     }
 
-    // Mutateur (set) pour la propriété nbPortes
-    public function setNbPortes($nbPortes)
-    {
-        $this->nbPortes = $nbPortes;
-    }
-
-    // Accesseur (get) pour la propriété vitesseActuelle
-    public function getVitesseActuelle()
-    {
-        return $this->vitesseActuelle;
-    }
-
-    // Mutateur (set) pour la propriété vitesseActuelle
-    public function setVitesseActuelle($vitesseActuelle)
-    {
-        $this->vitesseActuelle = $vitesseActuelle;
-    }
-
-    // Méthode personnalisée pour afficher toutes les informations d'une voiture
-    public function afficherInformations()
-    {
-        echo "Marque : " . $this->marque . "<br>";
-        echo "Modèle";
-    }
-    public function afficherInfos()
-  {
-    echo "Marque : ".$this->marque."\n";
-    echo "Modèle : ".$this->modele."\n";
-    echo "Nombre de portes : ".$this->nbPortes."\n";
-    echo "Vitesse actuelle : ".$this->vitesseActuelle." km/h\n";
-  }
 }
-// Pour tester cette classe, on peut utiliser les instructions suivantes :
 
+$personne1 = new Personne("DUPONT", "Michel", "2000-06-19");
+$personne2 = new Personne("DUCHEMIN", "Alice", "1800-12-31");
 
-// Création d'une voiture de marque Peugeot, modèle 408 et 5 portes
-$v1 = new Voiture("Peugeot", "408", 5);
-
-// Affiche les informations de la voiture
-$v1->afficherInfos();
-
-// Démarre la voiture
-$v1->demarrer();
-
-// Accélère la voiture de 50 km
-
-  // Création d'une voiture de marque Peugeot, modèle 408 et 5 portes
-    $v1 = new Voiture("Peugeot", "408", 5);
-    
-    // Affiche les informations de la voiture
-    $v1->afficherInfos();
-    
-    // Démarre la voiture
-    $v1->demarrer();
-    
-    // Accélère la voiture de 50 km
-    
+echo $personne1;
+echo $personne2;
