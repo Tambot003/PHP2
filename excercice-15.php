@@ -2,7 +2,7 @@
 
 <?php
 
-$email = "elan@elan-formation.";
+$email = "elan@elan-formation.fr;
 
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
   echo("L'adresse $email est une adresse e-mail valide");
